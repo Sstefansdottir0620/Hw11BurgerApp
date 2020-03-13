@@ -1,14 +1,12 @@
-var express = require("express");
-var mysql = require("mysql");
 
-// Import the model (burger.js) to use its database functions.
-var burger = require("../js/burger.js");
+var connection = require("../config/connection");
 
 //here I will create code that will add burgers to a list and create the devour buttons
 //front end development
 
 
-var router = express.Router();
+
+  module.exports = function(app){
 
 // Create all our routes and set up logic within those routes where required.
 // Use Handlebars to render the main index.html page with the plans in it.
@@ -24,7 +22,7 @@ app.get("/", function(req, res) {
 
 // Create a new burger
 app.post("/api/burger", function(req, res) {
-  connection.query("INSERT INTO burger (name) VALUES (?)", [req.body.burger], function(err, result) {
+  connection.query("INSERT INTO burger (name, devoured) VALUES (?, ?)", [req.body.name, req.body.devoured], function(err, result) {
     if (err) {
       return res.status(500).end();
     }
@@ -37,9 +35,10 @@ app.post("/api/burger", function(req, res) {
 
 // Update a burger
 app.put("/api/burger/:id", function(req, res) {
-  connection.query("UPDATE burger SET name = ? WHERE id = ?", [req.body.burger, req.params.id], function(err, result) {
+  connection.query("UPDATE burger SET devoured = ? WHERE id = ?", [req.body.devoured, req.params.id], function(err, result) {
     if (err) {
       // If an error occurred, send a generic server failure
+      console.log(err)
       return res.status(500).end();
     }
     else if (result.changedRows === 0) {
@@ -67,10 +66,8 @@ app.delete("/api/burger/:id", function(req, res) {
   });
 });
 
-// Start our server so that it can begin listening to client requests.
-app.listen(PORT, function() {
-  // Log (server-side) when our server has started
-  console.log("Server listening on: http://localhost:" + PORT);
-});
 
-module.exports = router;
+
+
+
+}

@@ -1,22 +1,26 @@
-.chirp {
-    padding: 10px;
-    margin: 10px;
-    background-color: #e8f9ff;
-  }
   
-  .cool-font {
-    font-family: Shrikhand, cursive;
+  /* .cool-font {
+    font-family: 'Lobster', cursive;;
     font-size: 24px;
     color: #1da1f2;
-  }
+  } */
   
   h1{
-    font-family: Shrikhand, cursive;
-    color: white;
-    font-size: 40pt;
+    font-family: 'Lobster', cursive;
+    color:black;
+    font-size: 5rem;
+    font-weight: bolder;
     padding-top: 50px;
   }
-  .container{ 
+
+  h2{
+    font-family: 'Lobster', cursive;
+    color:black;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-top: 50px;
+  }
+  body{ 
     background-color: tan;
     align-items: center;
     margin: auto;
@@ -30,7 +34,7 @@
   
   .btn {
     margin: 10px;
-    font-family: Shrikhand, cursive;
+    font-family: 'Shrikhand, cursive';
     color: #1da1f2;
     background-color: white;
     border-color: #1da1f2;
@@ -38,11 +42,20 @@
     border-width: 2px;
   }
   
-  p {
+  /* p {
     margin: 0;
     font-size: 16px;
-  }
+  } */
   
   body{
     background-color: thistle;
+  }
+
+  .container {
+    
+  }
+
+  ul{
+    list-style: none;
+    background-color: white;
   }
