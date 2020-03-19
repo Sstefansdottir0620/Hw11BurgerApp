@@ -1,16 +1,15 @@
   
-  /* .cool-font {
-    font-family: 'Lobster', cursive;;
-    font-size: 24px;
-    color: #1da1f2;
-  } */
   
   h1{
-    font-family: 'Lobster', cursive;
+    font-family: 'Ultra', serif;
     color:black;
-    font-size: 5rem;
+    font-size: 6rem;
     font-weight: bolder;
     padding-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 0px;
+    text-shadow: 5px 5px 2px white;
+    text-align: right;
   }
 
   h2{
@@ -19,43 +18,47 @@
     font-size: 2rem;
     font-weight: bolder;
     padding-top: 50px;
-  }
-  body{ 
-    background-color: tan;
-    align-items: center;
-    margin: auto;
-
-  }
-  
-  /* input,
-  textarea {
-    align-items: center;
-  } */
-  
-  .btn {
-    margin: 10px;
-    font-family: 'Shrikhand, cursive';
-    color: #1da1f2;
-    background-color: white;
-    border-color: #1da1f2;
-    border-style: solid;
-    border-width: 2px;
-  }
-  
-  /* p {
-    margin: 0;
-    font-size: 16px;
-  } */
-  
-  body{
-    background-color: thistle;
-  }
-
-  .container {
+    text-shadow: 2px 2px 1px white;
     
   }
+  body{ 
+    background-color: rosybrown;
+    background-image: url("../img/hamburger.png");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 1100px;
+  }
+  
+  .button {
+    margin: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color:white;
+    background-color: sienna;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 15px 0 rgba(0, 0, 0, 0.19);
+  }
+  
 
   ul{
     list-style: none;
     background-color: white;
+    padding: 5px;
+  }
+
+  li{
+    text-align: right;
+  }
+
+  .container{
+    max-width: 850px;
+    text-align: right;
+
+
+  }
+
+  .row{
+    margin-top: 20px;
+
   }

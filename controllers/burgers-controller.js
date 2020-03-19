@@ -22,11 +22,11 @@ app.get("/", function(req, res) {
 
 // Create a new burger
 app.post("/api/burger", function(req, res) {
-  connection.query("INSERT INTO burger (name, devoured) VALUES (?, ?)", [req.body.name, req.body.devoured], function(err, result) {
+  connection.query("INSERT INTO burger (name, devoured) VALUES (?,?)", [req.body.name, req.body.devoured], function(err, result) {
     if (err) {
       return res.status(500).end();
     }
-
+    console.log(req.body.devoured);
     // Send back the ID of the new burger
     res.json({ id: result.insertId });
     console.log({ id: result.insertId });

@@ -1,48 +1,48 @@
 <h1>Welcome to the Burger App!</h1>
 
-{{!-- <h2>Add a deliscious burger</h2> --}}
+<div class="container">
+
 <form class="create-form">
   <div class="form-group">
-    <label for="createBurger">Add a deliscious burger here</label>
+    <label for="createBurger"></label>
+    <button class="button" type="submit">Add your burger!</button>
     <input type="text" id="createBurger" name="name"/>
-    <button type="submit">Add a burger!</button>
-  </div>
 
-  <div class="form-group">
-    <label for="eatBurger">Pick your burger</label><br>
-    <input type="radio" name="devoured" value="1" checked/> Serve on-to the plate?<br/>
-    <input type="radio" name="devoured" value="0" checked/> Add to Burger Menu!
+    <input type="hidden" name="devoured" value="0">
   </div> 
 </form>
 
 <div class="row d-flex justify-content-center">
   <div class="col-md-5 text-center">
-    <h2>Burger menu!</h2>
+    <h2>Served up Burgers!</h2>
     <div class="row text-center">
       <div class="col-md-12 text-center">
-         <ul class="list-group">
+        <ul class="list-group">
           {{#each burger}}
             {{#unless devoured}}
-              {{>burger/burger-block devoured=1}}
+              {{>burger/burger-block devoured=false}}
             {{/unless}}
           {{/each}}
-          </ul>
+        </ul>
       </div>
     </div>
   </div>
   <div class="col-md-5 text-center">
-    <h2>Burgers on the plate!</h2>
+    <h2>Devoured Burgers!</h2>
      <div class="row text-center">
       <div class="col-md-12 text-center">
-         <ul class="list-group">
+        <ul class="list-group">
           {{#each burger}}
             {{#if devoured}}
-              {{> burger/burger-block devoured=0}}
+              {{> burger/burger-block devoured=true}}
             {{/if}}
           {{/each}}
-          </ul>
+        </ul>
+      </div>
       </div>
     </div>
   </div>
   
+</div>
+
 </div>
