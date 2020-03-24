@@ -13,7 +13,9 @@ var connection = require("../config/connection");
 app.get("/", function(req, res) {
   connection.query("SELECT * FROM burger;", function(err, data) {
     if (err) {
-      return res.status(500).end();
+      console.log(err);
+      res.status(200, {burger:{name:"broken", devoured:false}});
+      // return res.status(500).end();
     }
 
     res.render("index", { burger: data });
@@ -65,9 +67,5 @@ app.delete("/api/burger/:id", function(req, res) {
 
   });
 });
-
-
-
-
 
 }
