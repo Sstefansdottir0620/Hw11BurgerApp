@@ -2,11 +2,11 @@
 $(document).ready(function() {
   $(".change-devoured").on("click", function(event) {
     event.preventDefault();
-    console.log("test");
     var id = $(this).data("id");
-    var notDevoured = $(this).data("notDevoured");
+    console.log(id);
+    var notDevoured = $(this).attr("notDevoured");
 
-    if(notDevoured === false) {
+    if(notDevoured === "true") {
 
       // Send the DELETE request.
       $.ajax("/api/burger/" + id, {
@@ -22,7 +22,7 @@ $(document).ready(function() {
     }
     else {
       var newDinnerState = {
-        devoured: notDevoured
+        devoured: 1
       };
     // Send the PUT request.
     $.ajax("/api/burger/" + id, {
@@ -30,7 +30,7 @@ $(document).ready(function() {
       data: newDinnerState
     }).then(
       function() {
-        console.log("changed devour to", notDevoured);
+        console.log("changed devour to", newDinnerState.notDevoured);
         // Reload the page to get the updated list
         location.reload();
       }

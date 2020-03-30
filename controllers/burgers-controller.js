@@ -14,7 +14,7 @@ app.get("/", function(req, res) {
   connection.query("SELECT * FROM burger;", function(err, data) {
     if (err) {
       console.log(err);
-      res.status(200, {burger:{name:"broken", devoured:false}});
+      res.status(400, err);
       // return res.status(500).end();
     }
 
